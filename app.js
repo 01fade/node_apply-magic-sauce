@@ -1,30 +1,50 @@
 var filesystem = require('fs');
 var Client = require('node-rest-client').Client;
 var client = new Client();
-// secrets format: { "customer_id": 1111, "api_key": "string" }
+// secrets format: { "customer_id": 1111, "api_key": "string", "token": "" }
 var secrets = require('./secrets.json');
-var authtoken = "";
 var trait = "BIG5,Satisfaction_Life,Intelligence,Age,Female,Gay,Lesbian,Concentration,Politics,Religion,Relationship";
-var uid = 4; //this is Mark Zuckerberg's unique Facebook ID
-var args = {
-    data: ["18807449704", "215982125159841", "223649167822693", "38246844868", "193081554406", "49799578922", "115384328477363", "90642806830", "321331447886601", "199504240099510", "31732483895", "102099916530784", "10429446003", "1520899351541003", "114752870145", "38508744012", "5878552155", "124955570892789", "38635663260", "489536651069106"],
-    headers: {
-        "X-Auth-Token": authtoken,
-        "Content-Type": "application/json",
-        "Accept": "application/json"
-    }
-};
+var uid = 1111111111; //this is Mark Zuckerberg's unique Facebook ID
+var likes = [
+    // contributors
+    "18807449704", // Mashable
+    "115384328477363", // The Creators Project
+    "31732483895", // The Tonight Show Starring Jimmy Fallon
+    "10429446003", // The xx
+    "5878552155", // Ludovico Einaudi
+    "6815841748", // Barack Obama
+    "35481394342", // The Godfather
+    "9328458887", // adidas Originals
+    "12463674069", // Curly Fries
+    // not contributors
+    "124955570892789", // Bernie Sanders
+    "102099916530784", // Humans of New York
+];
 
 function getPrediction() {
-    client.post("http://api-v2.applymagicsauce.com/like_ids?traits=" + trait + "&uid=" + uid, args, function(data, response) {
-        console.log(response.statusCode);
-        if (response.statusCode == 403) {
-            console.log("Authtoken expired, get new token!");
-            getNewToken(getPrediction);
-        } else {
-            console.log(data);
+    // https://applymagicsauce.com/documentation_technical.html
+    var args = {
+        data: likes,
+        headers: {
+            "X-Auth-Token": secrets.token,
+            "Content-Type": "application/json",
+            "Accept": "application/json"
         }
-    });
+    };
+    client.post("http://api-v2.applymagicsauce.com/like_ids?interpretations=true&contributors=true&traits=" + trait + "&uid=" + uid,
+        args,
+        function(data, response) {
+            console.log(response.statusCode);
+            if (response.statusCode == 403) {
+                console.log("Authtoken expired, get new token!");
+                getNewToken(getPrediction);
+            } else if (response.statusCode == 204) {
+                console.log("No prediction could be made based on like ids provided.");
+            } else {
+                console.log(data);
+                saveData(data, "prediction");
+            }
+        });
 }
 
 
@@ -39,14 +59,16 @@ function getNewToken(callback) {
             "Accept": "application/json"
         }
     };
-
     client.post("http://api-v2.applymagicsauce.com/auth", getTokenArgs, function(data, response) {
         console.log(data);
-        authtoken = data.token;
-        console.log("New token: " + authtoken);
-        callback(authtoken);
+        secrets.token = data.token;
+        callback();
+        saveData(secrets, "secrets");
     });
 }
 
-// getPrediction(authtoken);
-console.log(secrets);
+function saveData(data, name) {
+    filesystem.writeFile("./" + name + ".json", JSON.stringify(data, null, 2));
+}
+
+getPrediction(secrets.token);
