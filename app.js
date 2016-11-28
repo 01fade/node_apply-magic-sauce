@@ -4,7 +4,7 @@ var client = new Client();
 // secrets format: { "customer_id": 1111, "api_key": "string", "token": "" }
 var secrets = require('./secrets.json');
 var trait = "BIG5,Satisfaction_Life,Intelligence,Age,Female,Gay,Lesbian,Concentration,Politics,Religion,Relationship";
-var uid = 1111111111; //this is Mark Zuckerberg's unique Facebook ID
+var uid = 1111111111; //e.g. 4 is Mark Zuckerberg's unique Facebook ID
 var likes = [
     // contributors
     "18807449704", // Mashable
@@ -16,7 +16,7 @@ var likes = [
     "35481394342", // The Godfather
     "9328458887", // adidas Originals
     "12463674069", // Curly Fries
-    // not contributors
+    // not contributors s. result in prediction.json
     "124955570892789", // Bernie Sanders
     "102099916530784", // Humans of New York
 ];
