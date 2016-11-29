@@ -1,6 +1,7 @@
 # Using Node and Apply Magic Sauce API
 
 Research Paper: http://www.pnas.org/content/110/15/5802.full.pdf?with-ds=yes
+
 API documentation: https://applymagicsauce.com/documentation.html
 
 ##Instructions for setup
