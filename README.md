@@ -1,11 +1,13 @@
 # Using Node and Apply Magic Sauce API
 
 Research Paper: http://www.pnas.org/content/110/15/5802.full.pdf?with-ds=yes
+API documentation: https://applymagicsauce.com/documentation.html
 
 ##Instructions for setup
 
+- get customer ID and API key at https://applymagicsauce.com/research.html
 - open terminal
-- type ```cd path/to/downloaded/folder``` and enter (learn more about terminal [here](http://mac.appstorm.net/how-to/utilities-how-to/how-to-use-terminal-the-basics/)
+- type ```cd path/to/downloaded/folder``` and enter (learn more about terminal [here](http://mac.appstorm.net/how-to/utilities-how-to/how-to-use-terminal-the-basics/))
 - in the terminal window type ```npm install```
 - go to the downloaded folder and rename the file ```secrets_example.json``` to ```secrets.json```
 - open the ```secrets.json``` file and paste in your Apply Magic Sauce ```customer_id``` and ```api_key```
