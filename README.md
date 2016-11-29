@@ -6,6 +6,8 @@ API documentation: https://applymagicsauce.com/documentation.html
 
 Predicted Traits from Like IDs: https://applymagicsauce.com/documentation_traits.html
 
+See what Facebook tells you it knows about you: https://www.facebook.com/ads/preferences/
+
 
 ##Instructions for setup
 
@@ -41,3 +43,6 @@ Predicted Traits from Like IDs: https://applymagicsauce.com/documentation_traits
 124955570892789 - Bernie Sanders
 
 102099916530784 - Humans of New York
+
+https://developers.facebook.com/tools/explorer/
+
