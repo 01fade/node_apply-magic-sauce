@@ -4,6 +4,9 @@ Research Paper: http://www.pnas.org/content/110/15/5802.full.pdf?with-ds=yes
 
 API documentation: https://applymagicsauce.com/documentation.html
 
+Predicted Traits from Like IDs: https://applymagicsauce.com/documentation_traits.html
+
+
 ##Instructions for setup
 
 - get customer ID and API key at https://applymagicsauce.com/research.html
