@@ -2,13 +2,15 @@
 
 Research Paper: http://www.pnas.org/content/110/15/5802.full.pdf?with-ds=yes
 
-##Setup
+##Instructions for setup
 
-- ```$ npm install```
+- open terminal
+- type ```cd path/to/downloaded/folder``` and enter (learn more about terminal [here](http://mac.appstorm.net/how-to/utilities-how-to/how-to-use-terminal-the-basics/)
+- ```npm install```
 - rename ```secrets_example.json``` to ```secrets.json```
 - paste ```customer_id``` and ```api_key```
     - leave ```token``` for now
-- ```$ node app.js```
+- ```node app.js```
 
 ##Example Facebook Like IDs
 
