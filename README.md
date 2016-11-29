@@ -6,11 +6,11 @@ Research Paper: http://www.pnas.org/content/110/15/5802.full.pdf?with-ds=yes
 
 - open terminal
 - type ```cd path/to/downloaded/folder``` and enter (learn more about terminal [here](http://mac.appstorm.net/how-to/utilities-how-to/how-to-use-terminal-the-basics/)
-- ```npm install```
-- rename ```secrets_example.json``` to ```secrets.json```
-- paste ```customer_id``` and ```api_key```
-    - leave ```token``` for now
-- ```node app.js```
+- in the terminal window type ```npm install```
+- go to the downloaded folder and rename the file ```secrets_example.json``` to ```secrets.json```
+- open the ```secrets.json``` file and paste in your Apply Magic Sauce ```customer_id``` and ```api_key```
+    - leave the ```token``` for now
+- in the terminal window type ```node app.js```
 
 ##Example Facebook Like IDs
 
