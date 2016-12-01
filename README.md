@@ -46,7 +46,7 @@ See what Facebook tells you it knows about you: https://www.facebook.com/ads/pre
 
 https://developers.facebook.com/tools/explorer/
 
-##View results in HTML format
+##View predictions in HTML format
 
 This page will automatically grab the ```predictions.json``` file from the folder to display the data in a more readable format. It also adds links to the corresponding Facebook pages. So, e.g. Mashable can be accesed via http://facebook.com/18807449704.
 
