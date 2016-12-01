@@ -1,6 +1,6 @@
 # Secrets
 secrets.*
-prediction.json
+test*.json
 
 # Logs
 logs
