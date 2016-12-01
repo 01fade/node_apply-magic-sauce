@@ -26,7 +26,7 @@ See what Facebook tells you it knows about you: https://www.facebook.com/ads/pre
 
 115384328477363 - The Creators Project
 
-31732483895 - The Tonight Show Starring Jimmy Fallon
+7976226799 - The Daily Show
 
 10429446003 - The xx
 
@@ -45,4 +45,12 @@ See what Facebook tells you it knows about you: https://www.facebook.com/ads/pre
 102099916530784 - Humans of New York
 
 https://developers.facebook.com/tools/explorer/
+
+##View results in HTML format
+
+This page will automatically grab the ```predictions.json``` file from the folder to display the data in a more readable format. It also adds links to the corresponding Facebook pages. So, e.g. Mashable can be accesed via http://facebook.com/18807449704.
+
+- if you are not in the directory of the main folder, type ```cd path/to/downloaded/folder``` and enter
+- type ```python -m SimpleHTTPServer``` and enter
+- open browser at localhost:8000/public
 

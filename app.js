@@ -9,7 +9,7 @@ var likes = [
     // contributors
     "18807449704", // Mashable
     "115384328477363", // The Creators Project
-    "31732483895", // The Tonight Show Starring Jimmy Fallon
+    "7976226799", // The Daily Show
     "10429446003", // The xx
     "5878552155", // Ludovico Einaudi
     "6815841748", // Barack Obama
